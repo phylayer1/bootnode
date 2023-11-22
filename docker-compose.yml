@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  bootnode:
+    image: ghcr.io/phylayer1/lcli:latest
+    pull_policy: never
+    command: run_bootnode.sh
+    network_mode: "host"
+    volumes:
+      - ./data:/data
+      - ./config:/config
+      - type: bind
+        source: ./lighthouse/run_bootnode.sh
+        target: /usr/local/bin/run_bootnode.sh
+
