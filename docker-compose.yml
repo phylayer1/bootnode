@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   bootnode:
-    image: ghcr.io/phylayer1/lcli:latest
+    image: ghcr.io/phylayer1/lcli
     pull_policy: never
     command: run_bootnode.sh
     network_mode: "host"
