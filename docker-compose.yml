@@ -5,6 +5,11 @@ services:
     image: ghcr.io/phylayer1/lcli
     command: run_bootnode.sh
     network_mode: "host"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "10"
     volumes:
       - ./data:/data
       - ./config:/config
